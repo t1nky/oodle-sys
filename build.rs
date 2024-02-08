@@ -16,12 +16,12 @@ fn generate_bindings() {
 fn generate_bindings() {}
 
 fn main() {
-    let lib_path = std::env::var("OODLE_LIB_PATH").expect("MYLIBRARY_LIB_PATH not set");
+    let lib_path = std::env::var("OODLE_LIB_PATH").expect("OODLE_LIB_PATH not set");
 
     #[cfg(target_os = "macos")]
     {
         println!("cargo:rustc-link-search=native={}", lib_path);
-        println!("cargo:rustc-link-lib=dylib=liboo2coremac64");
+        println!("cargo:rustc-link-lib=dylib=oo2coremac64");
     }
     #[cfg(target_os = "linux")]
     {
